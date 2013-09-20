@@ -11,6 +11,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="サポートサイトは、http://www.wings.msn.to/ です。お問い合わせは、メールwebmaster@wings.msn.toまたは、電話047-000-0000からお願いします。" />
 
 </RelativeLayout>
