@@ -9,12 +9,12 @@
     tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoLink="web"
-        android:lineSpacingMultiplier="1.5"
         android:ellipsize="end"
+        android:lineSpacingMultiplier="1.5"
         android:maxLines="2"
         android:text="サポートサイトは、http://www.wings.msn.to/ です。お問い合わせは、メールwebmaster@wings.msn.toまたは、電話047-000-0000からお願いします。" />
-
 </RelativeLayout>
