@@ -30,8 +30,8 @@ public class CanvasView extends View {
 
 	private void init() {
 		p = new Paint();
-		p.setColor(Color.BLUE);
-		p.setStrokeWidth(3);
+		p.setColor(Color.CYAN);
+		p.setStrokeWidth(10);
 		p.setStyle(Paint.Style.STROKE);
 		p.setStrokeJoin(Paint.Join.ROUND);
 		path = new Path();
