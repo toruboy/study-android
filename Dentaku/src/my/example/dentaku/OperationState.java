@@ -25,20 +25,25 @@ public class OperationState implements State {
 
 	@Override
 	public void onInputEqual(Context context) {
-		switch (context.getOp()) {
-		case DIVIDE:
-		case MULTIPLY:
-			context.copyAtoB();
-			context.doOperation();
-			context.changeState(ResultState.getInstance());
-			break;
-		case PLUS:
-		case MINUS:
-			context.showDisplay(context.getA());
-			context.changeState(ResultState.getInstance());
-			break;
-		default:
-			break;
+		try {
+			switch (context.getOp()) {
+			case DIVIDE:
+			case MULTIPLY:
+				context.copyAtoB();
+				context.doOperation();
+				context.changeState(ResultState.getInstance());
+				break;
+			case PLUS:
+			case MINUS:
+				context.showDisplay(context.getA());
+				context.changeState(ResultState.getInstance());
+				break;
+			default:
+				break;
+			}
+		} catch (CalcException e) {
+			context.setError();
+			context.changeState(ErrorState.getInstance());
 		}
 	}
 

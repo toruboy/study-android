@@ -22,7 +22,7 @@ public interface Context {
 
 	public void copyAtoB();
 
-	public double doOperation();
+	public double doOperation() throws CalcException;
 
 	public double getA();
 
@@ -30,6 +30,10 @@ public interface Context {
 
 	public void saveDisplayNumberToB();
 
-	void changeSign();
+	public void changeSign();
+
+	public void clearError();
+
+	public void setError();
 
 }

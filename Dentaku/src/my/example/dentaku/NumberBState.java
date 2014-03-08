@@ -18,18 +18,28 @@ public class NumberBState implements State {
 
 	@Override
 	public void onInputOperation(Context context, Operation op) {
-		context.saveDisplayNumberToB();
-		context.doOperation();
-		context.setOp(op);
-		context.saveDisplayNumberToA();
-		context.changeState(OperationState.getInstance());
+		try {
+			context.saveDisplayNumberToB();
+			context.doOperation();
+			context.setOp(op);
+			context.saveDisplayNumberToA();
+			context.changeState(OperationState.getInstance());
+		} catch (CalcException e) {
+			context.setError();
+			context.changeState(ErrorState.getInstance());
+		}
 	}
 
 	@Override
 	public void onInputEqual(Context context) {
-		context.saveDisplayNumberToB();
-		context.doOperation();
-		context.changeState(ResultState.getInstance());
+		try {
+			context.saveDisplayNumberToB();
+			context.doOperation();
+			context.changeState(ResultState.getInstance());
+		} catch (CalcException e) {
+			context.setError();
+			context.changeState(ErrorState.getInstance());
+		}
 	}
 
 	@Override

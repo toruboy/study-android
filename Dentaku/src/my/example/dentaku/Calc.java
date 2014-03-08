@@ -105,9 +105,17 @@ public class Calc implements Context {
 	}
 
 	@Override
-	public double doOperation() {
+	public double doOperation() throws CalcException {
 		double result = op.eval(a, b);
+
+		if (Double.isInfinite(result) || Double.isNaN(result)) {
+			throw new CalcException();
+		}
 		showDisplay(result);
+
+		if (disp.isOverflow(result)) {
+			throw new CalcException();
+		}
 		return result;
 	}
 
@@ -133,6 +141,16 @@ public class Calc implements Context {
 			disp.minus = !disp.minus;
 			disp.showDisplay(false);
 		}
+	}
+
+	@Override
+	public void clearError() {
+		disp.clearError();
+	}
+
+	@Override
+	public void setError() {
+
 	}
 
 }
