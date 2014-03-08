@@ -1,6 +1,7 @@
 package my.example.dentaku;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Calc implements Context {
 
@@ -9,6 +10,7 @@ public class Calc implements Context {
 	private Operation op;
 	protected AbstractDisplay disp;
 	protected State state;
+	protected android.content.Context parent;
 
 	public Calc() {
 		a = 0d;
@@ -17,8 +19,9 @@ public class Calc implements Context {
 		changeState(NumberAState.getInstance());
 	}
 
-	public void setDisplay(TextView txt) {
+	public void setDisplay(TextView txt, android.content.Context parent) {
 		this.disp = new StringDisplay(txt);
+		this.parent = parent;
 	}
 
 	public void onButtonNumber(Number num) {
@@ -150,7 +153,10 @@ public class Calc implements Context {
 
 	@Override
 	public void setError() {
-
+		if (parent != null) {
+			Toast.makeText(parent, "ERROR", Toast.LENGTH_SHORT).show();
+		}
+		disp.setError();
 	}
 
 }

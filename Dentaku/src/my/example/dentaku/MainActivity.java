@@ -13,11 +13,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		TextView txtDisp = (TextView)findViewById(R.id.display);
-		calc.setDisplay(txtDisp);
+		TextView txtDisp = (TextView) findViewById(R.id.display);
+		calc.setDisplay(txtDisp, this);
 	}
 
-	public void onClickButton(View view){
+	public void onClickButton(View view) {
 
 		switch (view.getId()) {
 		case R.id.zero:
