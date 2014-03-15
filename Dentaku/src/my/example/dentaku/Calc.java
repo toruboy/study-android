@@ -159,4 +159,15 @@ public class Calc implements Context {
 		disp.setError();
 	}
 
+	public void onButtonDel() {
+		state.onInputDel(this);
+	}
+
+	@Override
+	public void removeDisplayNumber() {
+		disp.onInputBackspace();
+		disp.showDisplay(false);
+
+	}
+
 }

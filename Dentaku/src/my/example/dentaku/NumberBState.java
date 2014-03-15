@@ -56,4 +56,10 @@ public class NumberBState implements State {
 		context.changeState(NumberAState.getInstance());
 	}
 
+	@Override
+	public void onInputDel(Context context) {
+		context.removeDisplayNumber();
+
+	}
+
 }

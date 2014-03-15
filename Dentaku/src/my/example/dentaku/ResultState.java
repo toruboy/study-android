@@ -45,4 +45,10 @@ public class ResultState implements State {
 		context.changeState(NumberAState.getInstance());
 	}
 
+	@Override
+	public void onInputDel(Context context) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
 }

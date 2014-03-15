@@ -11,4 +11,6 @@ public interface State {
 	public void onInputClear(Context context);
 
 	public void onInputAllClear(Context context);
+
+	public void onInputDel(Context context);
 }

@@ -80,8 +80,16 @@ public class StringDisplay extends AbstractDisplay {
 
 	@Override
 	public void onInputBackspace() {
-		// TODO 自動生成されたメソッド・スタブ
-
+		if (displayChar.size() > 0) {
+			displayChar.pop();
+			if (commaMode) {
+				if (decimalPlaces > 0) {
+					decimalPlaces--;
+				} else {
+					commaMode = false;
+				}
+			}
+		}
 	}
 
 	@Override

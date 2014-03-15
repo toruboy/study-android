@@ -80,6 +80,9 @@ public class MainActivity extends Activity {
 		case R.id.sign:
 			calc.changeSign();
 			break;
+		case R.id.del:
+			calc.onButtonDel();
+			break;
 		default:
 			break;
 		}

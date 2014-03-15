@@ -36,4 +36,6 @@ public interface Context {
 
 	public void setError();
 
+	public void removeDisplayNumber();
+
 }

@@ -45,4 +45,9 @@ public class NumberAState implements State {
 
 	}
 
+	@Override
+	public void onInputDel(Context context) {
+		context.removeDisplayNumber();
+	}
+
 }
